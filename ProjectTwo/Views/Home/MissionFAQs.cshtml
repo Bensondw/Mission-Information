@@ -1,0 +1,169 @@
+﻿@model IEnumerable<ProjectTwo.Models.MissionMission>
+
+
+
+
+@{
+    ViewBag.Title = "Frequently Asked Questions";
+}
+
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Encyclopedia Missionium", "Index", "Home")</li>
+    <li>@Html.ActionLink("Missions", "Missions", "Home")</li>
+    <li class="active">Mission FAQs</li>
+</ol>
+
+<h2>@ViewBag.Title</h2>
+
+<!--table of info-->
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Mission</th>
+                    <th>President</th>
+                    <th>Address</th>
+                    <th>Language</th>
+                    <th>Climate</th>
+                    <th>Dominant Religion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+        <tr>
+
+            <!--I need to change this from viewbag to get data from the database-->
+            <td>
+                @ViewBag.mission.missionName
+            </td>
+                
+            <td>
+                @ViewBag.mission.missionPresidentName
+            </td>
+                
+            <td>
+                @ViewBag.mission.missionAddress
+            </td>
+                
+            <td>
+                @ViewBag.mission.language
+            </td>
+
+            <td>
+                @ViewBag.mission.climate
+            </td>
+
+            <td>
+                @ViewBag.mission.dominantReligion
+            </td>
+
+        </tr>
+            
+    </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!--images-->
+
+<!--it would be good if i didnt have to say foreach right here, but there should only be one of each so it should work-->
+
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@ViewBag.mission.imageRefCountry" class="img-responsive"/>
+    </div>
+    
+    <div class="col-md-4">
+        <img src=@ViewBag.mission.imageRefTemple alt="Temple" class="img-responsive" />
+    </div>
+
+    <div class="col-md-4">
+        <img src="@ViewBag.mission.imageRefSecondary" alt="Flag2" class="img-responsive" />
+    </div>
+
+</div>
+
+
+    <!--Questions and Answers - these will be stored in the database-->
+   <!--Question form below here-->
+
+@{int missionID = @ViewBag.mission.missionID;}
+
+@*
+    @{int userID = @ViewBag.mission.userID;}
+*@
+
+<a href="@Url.Action("Create", "Home", new {missionID = missionID })" class="btn btn-primary btn-lg">Submit a Question &raquo;</a>
+
+
+
+
+
+<br /><br />
+
+
+@{int missioneID = @ViewBag.mission.missionID;}
+
+
+<!--Submitting Questions -->
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+
+                <br /><br />
+                <strong>Q: @item.question (asked by: @item.asker)</strong>
+                <br /><br />
+
+                <strong>A: @item.answer (answered by: @item.answerer)</strong>
+
+            </p>
+
+
+        </div>
+    </div>
+
+
+
+
+
+  
+
+
+    
+
+    <div>
+
+          
+
+
+
+        <form class="form-group" role="form" action="/Home/MissionFAQs/@item.missionQuestionID" method="POST">
+
+            <div class="form-group">
+
+                <label for="usr"></label>
+
+                <input name = "answer" type="text" class="form-control" id="usr">
+
+            </div>
+
+            <button type="Submit" class="btn btn-success pull-left">Reply</button>
+
+        </form>
+
+    </div>
+
+}
+
+
+
+
+<!--Submitting Questions -->

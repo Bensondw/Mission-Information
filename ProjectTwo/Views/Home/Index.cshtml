@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Encyclopedia Missionium";
+}
+
+<div class="jumbotron">
+    <h1>Encyclopedia Missionum</h1>
+    <p class="lead">Preparing future missionaries through personalized learning</p>
+    <p><a href="@Url.Action("Missions", "Home", new { })" class="btn btn-primary btn-lg">Start Learning Today &raquo;</a></p>
+</div>
+
+
+
+<br /><br />
+
+
+<div class="row">
+
+
+    <div class="col-md-6">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HPksiiuBLCs" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-6">
+        
+
+        <iframe src="https://www.lds.org/callings/missionary?lang=eng" width="500" height="500"></iframe>
+
+        <p>
+            <h3>Some of our favorite resources for learning about missions include:</h3>
+            <ul>
+                <li><a href="http://preparetoserve.com/returned-missionary-interviews/">Interviews with returned missionaries</a></li>
+                <li><a href="https://www.lds.org/callings/missionary/mission-maps/all?lang=eng">List of all missions</a></li>
+                <li><a href="http://www.missionsite.net/missionaries.php">Missionary Blogs</a></li>
+            </ul>
+        </p>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Missions</h2>
+        <p>
+            While every missionary shares treasured common experiences, every mission is unique
+        </p>
+        <p><a class="btn btn-default" href=@Url.Action("Missions", "Home", new { })>Learn about Missions&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>About Us</h2>
+        <p>We are dedicated to bringing returned missionaries' experience to future missionaries</p>
+        <p><a class="btn btn-default" href=@Url.Action("About", "Home", new { })>Find Out who we are &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p> Whether you have questions or suggestions, we would love to hear from you </p>
+        <p><a class="btn btn-default" href=@Url.Action("Contact", "Home", new { })>Contact Us &raquo;</a></p>
+    </div>
+</div>

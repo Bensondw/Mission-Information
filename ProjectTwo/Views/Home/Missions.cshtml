@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ProjectTwo.Models.Missions>
+
+
+
+
+    <ol class="breadcrumb">
+        <li>@Html.ActionLink("Encyclopedia Missionium", "Index", "Home")</li>
+        <li class="active">Missions</li>
+    </ol>
+
+    <h2>Missions</h2>
+
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+
+
+        </div>
+
+        <div class="col-md-4">
+
+            <!--  Drop down here  -->
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Select a mission
+                    <span class="caret"></span>
+                </button>
+
+                <!--instead of passing all these parameters, I need to reference the database and make it retrieve the information from each column-->
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            @Html.ActionLink(item.missionName + " " + "Mission", "MissionFAQs", new { missionID = item.missionID })
+
+                        </li>
+                    }
+
+                </ul>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="col-md-4">
+
+
+        </div>
+
+
+    </div>
+    <br />
+
+    <div class=" = row">
+        <div class="col-md-6">
+
+            <blockquote>
+                <p>
+                    The good works that really matter require the help of heaven. And the help of heaven requires working past the point of fatigue so far that only the meek and lowly will keep going long enough. The Lord doesn’t put us through this test just to give us a grade; he does
+                    it because the process will change us.
+                </p>
+                <footer>
+                    <cite><a href="https://speeches.byu.edu/talks/henry-b-eyring_waiting-upon-lord/">Elder Henry B. Eyring</a></cite>
+                </footer>
+            </blockquote>
+
+        </div>
+        <div class="col-md-6">
+
+            <blockquote>
+                <p>
+                    No missionary can determine the lasting effects of his or her labors.
+                </p>
+                <footer>
+                    <cite><a href="https://www.lds.org/ensign/1984/10/the-power-of-the-book-of-mormon-in-my-life?lang=eng">Elder Richard G. Scott</a></cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Encyclopedia Missionium", "Index", "Home")</li>
+    <li class="active">About Us</li>
+</ol>
+
+<h2>@ViewBag.Title</h2>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <p>Encyclopedia Missionium is a new organzation founded in 2015. We recognized a growing need for future missionaries to learn all they can about their future missions. Being returned missionaries ourselves, we recognized that we were great resources for future missionaries going to our missions. We seek to build a network of returned and future missionaries</p>
+
+        <p>Our goal is to help future missionaries prepare, and returned missionaries keep their memories fresh. We believe this network will uplift all involved.</p>
+
+        <p>We have only a few full-time employees, but we forsee rapid growth in the coming months. If you would like to be apart of Encyclopedia Missionium, please <a href=@Url.Action("Contact", "Home")>contact us</a>.</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <p class="blockquote-reverse"></p>
+    </div>
+</div>
+
+
+
